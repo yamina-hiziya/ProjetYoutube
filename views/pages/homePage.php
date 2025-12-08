@@ -1,0 +1,1 @@
+<h1>Bienvenue sur la mon site en PHP / MVC !</h1>
