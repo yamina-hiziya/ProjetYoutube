@@ -1,5 +1,5 @@
 <div class="card <?= $character["side"] === "dark" ? "darkshadow" : "lightshadow" ?>" style="width: 18rem;">
-    <img src="public/images/personnages/<?= $character["image"] ?>" class="card-img-top" alt="smaug">
+    <img src="public/images/personnages/<?= $character["image"] ?>" class="card-img-top" alt="<?= $character["name"] ?>">
     <div class="card-body">
         <h5 class="card-title"><?= $character["name"] ?></h5>
         <p class="card-text d-flex justify-content-between">

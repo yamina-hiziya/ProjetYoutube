@@ -23,3 +23,13 @@ function getCharacter(int $id): array
     $stmt->closeCursor();
     return $datas;
 }
+function getCharactersBySide($side): array
+{
+    $req = "SELECT * FROM characters WHERE side = :side";
+    $stmt = setDB()->prepare($req);
+    $stmt->bindParam(':side', $side, PDO::PARAM_STR);
+    $stmt->execute();
+    $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $datas;
+}

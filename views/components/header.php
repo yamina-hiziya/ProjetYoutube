@@ -14,10 +14,10 @@
                         <a class="nav-link" href="add_character_page">Création d'un combattant</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="light">Combattants de la Lumière</a>
+                        <a class="nav-link" href="lightfighters">Combattants de la Lumière</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dark">Combattants du coté obscur</a>
+                        <a class="nav-link" href="darkfighters">Combattants du coté obscur</a>
                     </li>
                 </ul>
             </div>

@@ -62,6 +62,13 @@ try {
             }
             updateCurrentCharacter($id, $name, $image, $health, $magic, $power, $side);
             break;
+        case 'lightfighters':
+            lightCharactersPage();
+            break;
+        case 'darkfighters':
+            darkCharactersPage();
+            break;
+
 
         default:
             throw new Exception(message: "La page n'existe pas");
