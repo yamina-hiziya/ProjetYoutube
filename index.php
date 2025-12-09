@@ -1,6 +1,7 @@
 <?php
 
 require_once 'controllers/pagesController.php';
+require_once 'controllers/crudController.php';
 require_once 'controllers/utilities.php';
 
 try {
@@ -18,6 +19,20 @@ try {
 
         case 'add_character_page':
             addCharacterPage();
+            break;
+        case 'createNewCharacter':
+            //showArray($_POST);
+            //on securise nos informations !
+            $name = htmlspecialchars(string: $_POST['name']);
+            $image = htmlspecialchars(string: $_POST['image']);
+            $health = htmlspecialchars(string: $_POST['health']);
+            $magic = htmlspecialchars(string: $_POST['magic']);
+            $power = htmlspecialchars(string: $_POST['power']);
+            $side = htmlspecialchars(string: $_POST['side']);
+            if (empty($name) || empty($image) || empty($health) || empty($magic) || empty($power) || empty($side)) {
+                throw new Exception(message: "Tous les champs sont obligatoires");
+            }
+            createCurrentCharacter($name, $image, $health, $magic, $power, $side);
             break;
 
         default:
