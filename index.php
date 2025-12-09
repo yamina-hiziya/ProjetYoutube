@@ -20,6 +20,7 @@ try {
         case 'add_character_page':
             addCharacterPage();
             break;
+
         case 'createNewCharacter':
             //showArray($_POST);
             //on securise nos informations !
@@ -33,6 +34,33 @@ try {
                 throw new Exception(message: "Tous les champs sont obligatoires");
             }
             createCurrentCharacter($name, $image, $health, $magic, $power, $side);
+            break;
+
+        case 'delete_character':
+            //showArray($_POST);
+            $id = $_POST['id'];
+            deleteCharacter($id);
+            break;
+
+        case 'modify_character':
+            //showArray($_POST);
+            $id = $_POST['id'];
+            updateCharacterPage($id);
+            break;
+
+        case 'updateCharacter':
+            //showArray($_POST);
+            $id = $_POST['id'];
+            $name = htmlspecialchars(string: $_POST['name']);
+            $image = htmlspecialchars(string: $_POST['image']);
+            $health = htmlspecialchars(string: $_POST['health']);
+            $magic = htmlspecialchars(string: $_POST['magic']);
+            $power = htmlspecialchars(string: $_POST['power']);
+            $side = htmlspecialchars(string: $_POST['side']);
+            if (empty($name) || empty($image) || empty($health) || empty($magic) || empty($power) || empty($side)) {
+                throw new Exception(message: "Tous les champs sont obligatoires");
+            }
+            updateCurrentCharacter($id, $name, $image, $health, $magic, $power, $side);
             break;
 
         default:

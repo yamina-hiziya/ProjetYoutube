@@ -1,6 +1,5 @@
 <?php
 
-
 //showArray($sides);
 
 ?>

@@ -16,8 +16,14 @@
         </p>
 
         <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-primary">Modifier</a>
-            <a href="#" class="btn btn-danger">Supprimer</a>
+            <form action="modify_character" method="post">
+                <input type="hidden" name="id" value="<?= $character["id"] ?>">
+                <button class="btn btn-primary">Modifier</button>
+            </form>
+            <form action="delete_character" method="post">
+                <input type="hidden" name="id" value="<?= $character["id"] ?>">
+                <button class="btn btn-danger">Supprimer</button>
+            </form>
         </div>
     </div>
 </div>

@@ -23,11 +23,27 @@ function addCharacterPage()
     $sides = getAllSides();
 
     $datas_page = [
-        "description" => "Page de création d'un nouveau personnage",
-        "title" => "page de création",
+        "description" => "Page de modification d'un nouveau personnage",
+        "title" => "page de modification",
         "view" => "views/pages/addPage.php",
         "layout" => "views/components/layout.php",
         "sides" => $sides,
+    ];
+    drawPage($datas_page);
+}
+
+function updateCharacterPage($id)
+{
+    $character = getCharacter($id);
+    $side = getAllSides();
+
+    $datas_page = [
+        "description" => "Page de modification d'un personnage",
+        "title" => "page de modification",
+        "view" => "views/pages/updatePage.php",
+        "layout" => "views/components/layout.php",
+        "character" => $character,
+        "sides" => $side,
     ];
     drawPage($datas_page);
 }
