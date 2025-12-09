@@ -1,6 +1,6 @@
 <?php
 
-showArray($character);
+//showArray($character);
 
 ?>
 <h1 class="text-center mb-4">Modifier un Combattant</h1>

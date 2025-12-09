@@ -28,7 +28,7 @@ function deleteCharacterDB($id)
 }
 function updateCharacterDB($id, $name, $image, $health, $magic, $power, $side)
 {
-    $req = "UPDATE characters SET name = :name, image = :image, health = :health, magic = :magic, power = :power, side = :side WHERE id = :id WHERE id = :id";
+    $req = "UPDATE characters SET name = :name, image = :image, health = :health, magic = :magic, power = :power, side = :side WHERE id = :id";
     $stmt = setDB()->prepare($req);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
