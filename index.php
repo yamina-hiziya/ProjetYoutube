@@ -5,22 +5,21 @@ require_once 'controllers/utilities.php';
 
 try {
     if (empty($_GET['page'])) {
-        $page = 'accueil';
+        $page = 'home';
     } else {
         $path = explode(separator: '/', string: filter_var(value: $_GET['page'], filter: FILTER_SANITIZE_URL));
         $page = $path[0];
     }
 
     switch ($page) {
-        case 'accueil':
+        case 'home':
             homePage();
             break;
-        case 'connexion':
-            require_once 'views/pages/loginPage.php';
+
+        case 'add_character_page':
+            addCharacterPage();
             break;
-        case 'test':
-            testPage();
-            break;
+
         default:
             throw new Exception(message: "La page n'existe pas");
             break;

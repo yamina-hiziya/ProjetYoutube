@@ -1,30 +1,33 @@
 <?php
+require_once 'models/sidesModel.php';
+require_once 'models/charactersModel.php';
 
 function homePage()
 {
+    $sides = getAllSides();
+    $characters = getAllCharacters();
+
     $datas_page = [
         "description" => "Page d'accueil du site",
         "title" => "page d'accueil",
         "view" => "views/pages/homePage.php",
-        "layout" => "views/components/layout.php"
+        "layout" => "views/components/layout.php",
+        "sides" => $sides,
+        "characters" => $characters,
     ];
     drawPage($datas_page);
 }
 
-function testPage()
+function addCharacterPage()
 {
-    $donnees_recup = [
-        "name" => "John",
-        "lastname" => "Doe",
-        "age" => 30,
-    ];
+    $sides = getAllSides();
 
     $datas_page = [
-        "description" => "Page de test au site",
-        "title" => "Page de test",
-        "view" => "views/pages/testPage.php",
+        "description" => "Page de création d'un nouveau personnage",
+        "title" => "page de création",
+        "view" => "views/pages/addPage.php",
         "layout" => "views/components/layout.php",
-        "data_recep" => $donnees_recup
+        "sides" => $sides,
     ];
     drawPage($datas_page);
 }

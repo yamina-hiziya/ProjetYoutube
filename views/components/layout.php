@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -10,17 +10,14 @@
     <title><?= $title ?></title>
 </head>
 
-<body>
-    <header>
-        <h1>Mon deck de fighters</h1>
-        <p>navbar</p>
+<body class="min-vh-100 d-flex flex-column ">
+    <?php require_once 'views/components/header.php'; ?>
 
-    </header>
-
-    <main>
+    <main class="container flex-grow-1">
         <?= $content ?>
     </main>
 
+    <?php require_once 'views/components/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 

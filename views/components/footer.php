@@ -1,3 +1,3 @@
 <footer>
-    <h3>Projet en PHP /MVC</h3>
+    <h3 class="text-center border-top border-2 border-black py-4 mt-5">Projet en PHP /MVC</h3>
 </footer>
