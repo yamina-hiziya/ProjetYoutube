@@ -20,3 +20,13 @@ function drawPage($datas_page): void
     $content = ob_get_clean();
     require_once($layout);
 }
+function sendJson_get($data): void
+{
+    //Tous les sites y ont accès
+    header('Access-Control-Allow-Origin:*');
+    //On autorise la méthode GET et non post, put, patch, delete,head et options
+    header('Access-Control-Allow-Methods:GET');
+    //on envoie en JSON
+    header('Content-Type:application/json');
+    echo json_encode($data);
+}

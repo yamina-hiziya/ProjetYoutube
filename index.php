@@ -2,6 +2,7 @@
 
 require_once 'controllers/pagesController.php';
 require_once 'controllers/crudController.php';
+require_once 'controllers/apiController.php';
 require_once 'controllers/utilities.php';
 
 try {
@@ -68,7 +69,9 @@ try {
         case 'darkfighters':
             darkCharactersPage();
             break;
-
+        case 'api_characters':
+            apiCharacters();
+            break;
 
         default:
             throw new Exception(message: "La page n'existe pas");
